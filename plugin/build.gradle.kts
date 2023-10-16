@@ -8,8 +8,8 @@ plugins {
 }
 
 java {
-  sourceCompatibility = JavaVersion.VERSION_1_8
-  targetCompatibility = JavaVersion.VERSION_1_8
+  sourceCompatibility = JavaVersion.VERSION_17
+  targetCompatibility = JavaVersion.VERSION_17
 }
 
 val KOTLIN_VERSION: String by project
@@ -41,12 +41,13 @@ gradlePlugin {
 }
 repositories {
   mavenCentral()
+  maven("https://plugins.gradle.org/m2/")
 }
 val compileKotlin: KotlinCompile by tasks
 compileKotlin.kotlinOptions {
-  jvmTarget = "1.8"
+  jvmTarget = "17"
 }
 val compileTestKotlin: KotlinCompile by tasks
 compileTestKotlin.kotlinOptions {
-  jvmTarget = "1.8"
+  jvmTarget = "17"
 }
